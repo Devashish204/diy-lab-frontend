@@ -22,7 +22,8 @@ function App() {
         location.pathname.startsWith("/admin") ||
         location.pathname === "/user-login" ||
         location.pathname === "/user-create-account" ||
-        location.pathname === "/user-forgot-password";
+        location.pathname === "/user-forgot-password"||
+        location.pathname === "/unauthorized";
 
     return (
         <>
