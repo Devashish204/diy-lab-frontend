@@ -11,7 +11,7 @@ function App() {
     const location = useLocation();
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/hello")
+        fetch(`${import.meta.env.VITE_API_BASE_URL_PROD}/api/hello`)
             .then((res) => res.text())
             .then((data) => setMessage(data))
             .catch((err) => console.error(err));
