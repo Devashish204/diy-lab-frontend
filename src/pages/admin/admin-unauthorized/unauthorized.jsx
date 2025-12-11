@@ -6,7 +6,7 @@ export default function Unauthorized() {
     const navigate = useNavigate();
 
     const handleGoBack = () => {
-        navigate("/login");
+        navigate("/admin-login");
     };
 
     return (
