@@ -1,0 +1,94 @@
+.facilities-container {
+    padding: 4rem 2rem;
+    background: #F8F3ED;
+    text-align: center;
+    min-height: 100vh;;
+    margin-top: 5rem;
+}
+
+.facilities-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 5rem;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facility-card {
+    background: #E0DED9;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.facility-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover img {
+    transform: scale(1.05);
+}
+
+.facility-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.explore-button-container {
+    margin-top: 3rem;
+}
+
+.explore-button {
+    background: linear-gradient(135deg, #007bff, #00a8ff);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.explore-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
+    background: linear-gradient(135deg, #0069d9, #0090f5);
+}

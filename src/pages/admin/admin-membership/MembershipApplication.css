@@ -1,0 +1,213 @@
+.membership-container {
+    padding: 20px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.top-header h1 {
+    font-size: 28px;
+    color: #0d47a1;
+    text-align: center;
+    flex: 1;
+}
+
+.back-dashboard-btn {
+    position: absolute;
+    right: 0;
+    background-color: #455a64;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+.back-dashboard-btn:hover {
+    background-color: #263238;
+}
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.applications-table th,
+.applications-table td {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+.applications-table th {
+    background-color: #1976d2;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.applications-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.applications-table tr:hover {
+    background-color: #e3f2fd;
+}
+
+.view-btn,
+.approve-btn,
+.reject-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 3px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.view-btn {
+    background-color: #0288d1;
+}
+.view-btn:hover {
+    background-color: #01579b;
+}
+
+.approve-btn {
+    background-color: #43a047;
+}
+.approve-btn:hover {
+    background-color: #2e7d32;
+}
+
+.reject-btn {
+    background-color: #e53935;
+}
+.reject-btn:hover {
+    background-color: #c62828;
+}
+
+.approved {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.verifying {
+    color: #f57c00;
+    font-weight: 600;
+}
+
+.pending {
+    color: #0288d1;
+    font-weight: 600;
+}
+
+.rejected {
+    color: #c62828;
+    font-weight: 600;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.image-wrapper {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.image-wrapper img {
+    max-width: 450px;
+    max-height: 450px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-btn:hover {
+    background: #c62828;
+}
+.membership-primary-btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 25rem;
+}
+.primary-btn:hover {
+    background-color: #0d47a1;
+}
+
+.download-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+    margin-bottom: 25px;
+    margin-left: 25rem;
+}
+
+.membership-primary-btn {
+    background: linear-gradient(135deg, #007bff, #00a8ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}
+
+.membership-primary-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #0080ff);
+    box-shadow: 0 5px 12px rgba(0, 123, 255, 0.4);
+}

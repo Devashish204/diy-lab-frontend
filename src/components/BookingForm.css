@@ -1,0 +1,185 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.modal-container {
+    background: linear-gradient(145deg, #ffffff, #f4f4f4);
+    padding: 2rem;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.modal-title span {
+    color: #007bff;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: nowrap;
+}
+
+.modal-container input {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+.payment-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 1rem;
+    background: #f8f9fa;
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+/* Submit Button */
+.booking-form .service-submit-btn {
+    background: linear-gradient(135deg, #007bff, #00a8ff);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+
+    /* ✅ Centering */
+    display: block;        /* makes it take its own line */
+    margin-left: auto;     /* centers horizontally */
+    margin-right: auto;    /* centers horizontally */
+
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-align: center;    /* ensures text is centered too */
+}
+
+.booking-form .submit-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #0069d9, #0088ff);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.25);
+}
+
+/* Loader + Success Animation */
+.loader {
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.success-message {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    color: #28a745;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.6s ease;
+}
+
+.status-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #444;
+    margin-top: 0.6rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-container {
+        padding: 1.2rem;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .payment-note {
+        font-size: 0.9rem;
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #ff4d4d;
+    transform: scale(1.2);
+}

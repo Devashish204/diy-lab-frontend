@@ -1,0 +1,94 @@
+.team-section {
+    background: linear-gradient(135deg, #F8F3ED);
+    padding: 4rem 2rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin-top: 5rem;
+}
+
+.team-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #0d47a1;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.member-image img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    margin-top: 1rem;
+}
+
+.member-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0d47a1;
+    margin-bottom: 0.3rem;
+}
+
+.member-info p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #455a64;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .team-title {
+        font-size: 1.8rem;
+    }
+
+    .member-image img {
+        width: 150px;
+        height: 180px;
+    }
+
+    .member-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .member-info p {
+        font-size: 0.95rem;
+    }
+}

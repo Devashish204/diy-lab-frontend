@@ -1,0 +1,252 @@
+.career-admin-container {
+    padding: 30px;
+    background: #f7f9fc;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.career-admin-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.controls input,
+.controls select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    width: 220px;
+    transition: 0.3s;
+}
+
+.controls input:focus,
+.controls select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.download-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    min-width: 100%;
+}
+
+.career-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+    min-width: 1200px;
+}
+
+.career-table th,
+.career-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.career-table th {
+    background-color: #007bff;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #006ad1;
+}
+
+.approved-row {
+    background-color: #e9ffe9 !important;
+}
+
+.approved-text {
+    color: green;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+@media (max-width: 1024px) {
+    .career-admin-container {
+        padding: 20px;
+    }
+
+    .career-admin-container h1 {
+        font-size: 24px;
+    }
+
+    .controls {
+        gap: 10px;
+    }
+
+    .controls input,
+    .controls select {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-admin-container {
+        padding: 15px;
+    }
+
+    .career-admin-container h1 {
+        font-size: 22px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .controls input,
+    .controls select,
+    .download-btn {
+        width: 100%;
+    }
+
+    .table-container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .career-table {
+        font-size: 13px;
+        min-width: 900px;
+    }
+
+    button,
+    .approve-btn {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .career-admin-container {
+        padding: 10px;
+    }
+
+    .career-admin-container h1 {
+        font-size: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .controls input,
+    .controls select,
+    .download-btn {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .table-container {
+        padding: 10px;
+    }
+
+    .career-table {
+        font-size: 12px;
+        min-width: 700px;
+    }
+
+    button,
+    .approve-btn {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 20px;
+}
+
+.career-back-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #217dbb;
+    transform: scale(1.05);
+}

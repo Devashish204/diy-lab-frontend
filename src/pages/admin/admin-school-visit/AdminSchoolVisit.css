@@ -1,0 +1,101 @@
+.admin-school-visits-container {
+    padding: 30px;
+    background-color: #faf9f7;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.schoolVisit-back-btn {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #222;
+}
+
+.loading-text,
+.no-data {
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.visit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.visit-table thead {
+    background-color: #2e3a59;
+    color: #fff;
+}
+
+.visit-table th,
+.visit-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.visit-table tr:hover {
+    background-color: #f3f4f6;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.status-badge.accepted {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-badge.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-badge.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.accept-bt

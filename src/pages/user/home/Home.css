@@ -1,0 +1,194 @@
+.home-container {
+    font-family: "Poppins", sans-serif;
+    color: #222;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, #ffcb05, #ffe880);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+}
+
+.welcome-section h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
+.about-section {
+    max-width: 100%;
+    margin: 3rem auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #222;
+}
+
+.about-section .intro {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+.points-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem;
+}
+
+.point {
+    background: #fffdf0;
+    border: 1px solid #ffec9e;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.point:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2rem;
+    color: #ffcb05;
+    margin-bottom: 0.8rem;
+}
+
+.point h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.point p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.home-cta-text {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #333;
+    font-size: 1rem;
+    margin-left: 35rem;
+}
+
+.slider-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: #000;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    width: 100%;
+    height: 75vh;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+
+    .welcome-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .about-section {
+        margin: 2rem 1rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .about-section .intro {
+        font-size: 1.1rem !important;
+        line-height: 1.6;
+    }
+
+    .points-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .point h3 {
+        font-size: 1.4rem !important;
+    }
+
+    .home-cta-text {
+        font-size: 0.95rem !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .slide {
+        height: 45vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .welcome-section h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .about-section {
+        padding: 1.2rem !important;
+    }
+
+    .slide {
+        height: 38vh !important;
+    }
+
+    .point {
+        padding: 1rem !important;
+    }
+}

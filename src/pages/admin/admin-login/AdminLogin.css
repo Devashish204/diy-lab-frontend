@@ -1,0 +1,64 @@
+/* Global Body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.admin-login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.admin-login-box {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Logo */
+.admin-login-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Title */
+.admin-login-title {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+/* Google Button */
+.admin-google-btn {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+    color: black;
+}
+
+.admin-google-btn:hover {
+    background: #f3f3f3;
+}
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}

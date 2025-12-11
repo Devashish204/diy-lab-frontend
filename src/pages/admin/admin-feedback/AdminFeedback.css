@@ -1,0 +1,171 @@
+.admin-feedback-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: "Poppins", sans-serif;
+}
+
+.admin-feedback-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-filter label {
+    font-weight: 600;
+    color: #333;
+}
+
+.date-filter input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.date-filter input:focus {
+    border-color: #007bff;
+}
+
+.filter-btn,
+.clear-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.filter-btn {
+    background-color: #007bff;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.clear-btn {
+    background-color: #6c757d;
+}
+
+.clear-btn:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.feedback-table th,
+.feedback-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 10px;
+    vertical-align: middle;
+}
+
+.feedback-table th {
+    background-color: #222;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feedback-table tr:hover {
+    background-color: #f4f4f4;
+    transition: background-color 0.3s;
+}
+
+.feedback-table td {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #b02a37;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .feedback-table {
+        font-size: 0.85rem;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-btn,
+    .clear-btn {
+        width: 100%;
+    }
+}
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.feedback-back-btn {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #222;
+    transform: scale(1.05);
+}

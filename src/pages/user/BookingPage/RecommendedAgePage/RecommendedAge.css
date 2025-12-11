@@ -1,0 +1,199 @@
+.recommended-age-container {
+    padding: 4rem 2rem;
+    background: #F8F3ED;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: 5rem;
+}
+
+.recommended-age-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    color: #2b2b2b;
+    letter-spacing: 0.8px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recommended-age-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.age-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 380px;
+    backdrop-filter: blur(12px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.age-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    padding: 2px;
+    background: linear-gradient(135deg, #007bff, #00a8ff, #7dd3fc);
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.age-card:hover::before {
+    opacity: 1;
+}
+
+.age-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.age-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.age-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.age-card::after {
+    content: "🎓";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.age-card:hover::after {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.age-button-container {
+    margin-top: 4rem;
+}
+
+.back-button {
+    background: linear-gradient(135deg, #007bff, #00a8ff);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.9rem 2.4rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
+    background: linear-gradient(135deg, #0069d9, #0090f5);
+}
+@media (max-width: 768px) {
+
+    .recommended-age-container {
+        padding: 2rem 1rem !important;
+        margin-top: 3rem !important;
+        min-height: auto !important;
+    }
+
+    .recommended-age-title {
+        font-size: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .recommended-age-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+        gap: 1.8rem !important;
+    }
+
+    .age-card {
+        padding: 1.8rem 1.2rem !important;
+        max-width: 320px !important;
+        border-radius: 18px !important;
+    }
+
+    .age-card h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .age-card p {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .age-card::after {
+        font-size: 1.6rem !important;
+        top: -10px !important;
+        right: 14px !important;
+    }
+
+    .back-button {
+        font-size: 1rem !important;
+        padding: 0.7rem 2rem !important;
+        border-radius: 25px !important;
+    }
+}
+@media (max-width: 480px) {
+
+    .recommended-age-title {
+        font-size: 1.7rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .recommended-age-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+
+    .age-card {
+        padding: 1.4rem 1rem !important;
+        max-width: 280px !important;
+    }
+
+    .age-card h2 {
+        font-size: 1.25rem !important;
+    }
+
+    .age-card p {
+        font-size: 0.9rem !important;
+    }
+
+    .age-card::after {
+        font-size: 1.4rem !important;
+        top: -8px !important;
+        right: 10px !important;
+    }
+
+    .back-button {
+        font-size: 0.9rem !important;
+        padding: 0.6rem 1.6rem !important;
+    }
+}

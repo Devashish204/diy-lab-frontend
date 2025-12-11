@@ -1,0 +1,130 @@
+.contact-page {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f8f3ed;
+    padding: 15rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.contact-page h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #1f2937;
+    font-weight: bold;
+    margin-top: -7rem;
+}
+
+.sticky-notes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.note {
+    width: 300px;
+    height: 300px;
+    min-height: 150px;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    transform: rotate(-2deg);
+    transition: transform 0.2s ease, width 0.3s ease;
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+}
+
+.note:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.note.yellow {
+    background: #fff9c4;
+}
+
+.note.pink {
+    background: #f8bbd0;
+}
+
+.note.blue {
+    background: #bbdefb;
+}
+
+.note::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #444;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.note h3 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #111827;
+    font-weight: bold;
+}
+
+.note p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+@media (max-width: 1024px) {
+    .note {
+        width: 180px;
+        min-height: 140px;
+        padding: 1.3rem;
+    }
+    .note h3 {
+        font-size: 1.1rem;
+    }
+    .note p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sticky-notes {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .note {
+        width: 90%;
+        max-width: 280px;
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page {
+        padding: 2rem 1rem;
+    }
+    .contact-page h2 {
+        font-size: 1.6rem;
+    }
+    .note {
+        padding: 1rem;
+        min-height: 130px;
+    }
+    .note h3 {
+        font-size: 1rem;
+    }
+    .note p {
+        font-size: 0.9rem;
+    }
+}
