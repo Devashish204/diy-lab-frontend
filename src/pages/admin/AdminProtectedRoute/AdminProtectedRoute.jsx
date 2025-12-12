@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 
-const AdminProtectedRoute = ({ children }) => {
-    const storedUser = localStorage.getItem("user");
-    const user = storedUser ? JSON.parse(storedUser) : null;
+export default function AdminProtectedRoute({ children }) {
+    const [loading, setLoading] = useState(true);
+    const [allowed, setAllowed] = useState(false);
 
-    if (!user || user.role !== "ADMIN") {
-        return <Navigate to="/admin-login" replace />;
-    }
+    useEffect(() => {
+        axios.get("https://13.60.198.252.nip.io/api/admin/me", {
+            withCredentials: true
+        })
+            .then(res => {
+                if (res.data.authenticated && res.data.role === "ADMIN") {
+                    setAllowed(true);
+                    localStorage.setItem("user", JSON.stringify({role: "ADMIN"}));
+                } else {
+                    localStorage.removeItem("user");
+                    setAllowed(false);
+                }
+            })
+            .catch(() => {
+                localStorage.removeItem("user");
+                setAllowed(false);
+            })
+            .finally(() => setLoading(false));
+    }, []);
 
-    return children;
-};
+    if (loading) return <div>Checking admin authentication...</div>;
 
-export default AdminProtectedRoute;
+    return allowed ? children : <Navigate to="/admin-login" replace />;
+}
