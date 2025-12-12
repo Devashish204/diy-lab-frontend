@@ -76,7 +76,6 @@ const CategoryView = () => {
             setFormData((prev) => ({ ...prev, [name]: value }));
         }
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!selectedWorkshop) return;
@@ -86,6 +85,8 @@ const CategoryView = () => {
 
         const form = new FormData();
         form.append("email", formData.email);
+        form.append("fullName", formData.userName);
+        form.append("phoneNumber", formData.phone);
         form.append("screenshot", formData.screenshot);
 
         try {
