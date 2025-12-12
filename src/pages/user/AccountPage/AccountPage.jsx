@@ -206,9 +206,20 @@ export default function AccountPage() {
                                                             {w.approved ? "Approved" : "Pending"}
                                                         </span></td>
                                                     <td>{new Date(w.appliedAt).toLocaleString()}</td>
-                                                    <td>{w.paymentEvidenceUrl ?
-                                                        <button onClick={() => setSelectedImage(w.paymentEvidenceUrl)}>View</button> : "—"}
+                                                    <td>
+                                                        {w.paymentEvidenceBase64 ? (
+                                                            <button
+                                                                onClick={() =>
+                                                                    setSelectedImage(
+                                                                        "data:image/jpeg;base64," + w.paymentEvidenceBase64
+                                                                    )
+                                                                }
+                                                            >
+                                                                View
+                                                            </button>
+                                                        ) : "—"}
                                                     </td>
+
                                                 </tr>
                                             ))}
                                             </tbody>
@@ -287,7 +298,7 @@ export default function AccountPage() {
                 <div className="image-modal" onClick={() => setSelectedImage(null)}>
                     <div className="image-wrapper" onClick={(e) => e.stopPropagation()}>
                         <img src={selectedImage} />
-                        <button onClick={() => setSelectedImage(null)}>✖</button>
+                        <button className="close-btn" onClick={() => setSelectedImage(null)}>✖</button>
                     </div>
                 </div>
             )}
