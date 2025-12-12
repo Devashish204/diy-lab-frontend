@@ -84,22 +84,11 @@ const CategoryView = () => {
         setIsSubmitting(true);
         setSubmissionMessage(null);
 
-        const data = new FormData();
-        const userRequest = {
-            userName: formData.userName,
-            emailId: formData.email,
-            phoneNumber: formData.phone,
-            workshopId: selectedWorkshop.id,
-        };
-
-        data.append("data", new Blob([JSON.stringify(userRequest)], { type: "application/json" }));
-        data.append("screenshot", formData.screenshot);
-
         try {
-            const response = await fetch(`${baseUrl}/api/apply`, {
-                method: "POST",
-                body: data,
-            });
+            const response = await fetch(
+                `${baseUrl}/api/workshops/${selectedWorkshop.id}/apply?email=${encodeURIComponent(formData.email)}`,
+                { method: "POST" }
+            );
 
             if (response.ok) {
                 setSubmissionMessage({ type: "success", text: "✅ Application submitted successfully!" });
@@ -107,10 +96,10 @@ const CategoryView = () => {
                 setFormData({ userName: "", email: "", phone: "", screenshot: null });
             } else {
                 const text = await response.text();
-                setSubmissionMessage({ type: "error", text: "❌ Submission failed! " + text });
+                setSubmissionMessage({ type: "error", text: "❌ " + text });
             }
         } catch (err) {
-            setSubmissionMessage({ type: "error", text: "⚠️ An error occurred. Please try again." });
+            setSubmissionMessage({ type: "error", text: "⚠️ Something went wrong." });
         } finally {
             setTimeout(() => {
                 setIsSubmitting(false);
