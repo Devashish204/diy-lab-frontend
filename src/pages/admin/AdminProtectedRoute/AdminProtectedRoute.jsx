@@ -12,5 +12,4 @@ const AdminProtectedRoute = ({ children }) => {
     return children;
 };
 
-
 export default AdminProtectedRoute;
