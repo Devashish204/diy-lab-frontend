@@ -53,13 +53,19 @@ const AppRoutes = () => {
 
             {/* 🛡️ Protected Admin routes */}
             <Route
-                path="/admin/*"
+                path="/admin"
+                element={<Navigate to="/admin-login" replace />}
+            />
+
+            <Route
+                path="/admin/dashboard"
                 element={
                     <AdminProtectedRoute>
-                        <AdminDashboard/>
+                        <AdminDashboard />
                     </AdminProtectedRoute>
                 }
             />
+
             <Route
                 path="/admin/workshops/new"
                 element={
