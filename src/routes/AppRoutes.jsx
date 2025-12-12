@@ -1,4 +1,5 @@
 import {Routes, Route} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import CreateWorkshop from "../pages/admin/CreateWorkshop.jsx";
 import AdminDashboard from "../pages/admin/admin-dashboard/AdminDashboard.jsx";
 import ManageUsers from "../pages/admin/ManageUsers.jsx";
