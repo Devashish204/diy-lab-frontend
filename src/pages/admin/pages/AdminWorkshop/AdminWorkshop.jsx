@@ -199,9 +199,13 @@ export default function AdminWorkshop() {
         setLoadingApprovals((prev) => ({ ...prev, [bookingId]: "loading" }));
         try {
             const res = await fetch(
-                `${baseUrl}/api/admin/approve-user/${bookingId}`,
-                { method: "POST", credentials: "include" }
+                `${baseUrl}/api/admin/workshops/approve-user/${bookingId}`,
+                {
+                    method: "POST",
+                    credentials: "include"
+                }
             );
+
             if (res.status === 401) {
                 localStorage.removeItem("user");
                 navigate("/admin-login");

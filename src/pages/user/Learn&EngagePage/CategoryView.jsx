@@ -84,22 +84,28 @@ const CategoryView = () => {
         setIsSubmitting(true);
         setSubmissionMessage(null);
 
+        const form = new FormData();
+        form.append("email", formData.email);
+        form.append("screenshot", formData.screenshot);
+
         try {
             const response = await fetch(
-                `${baseUrl}/api/workshops/${selectedWorkshop.id}/apply?email=${encodeURIComponent(formData.email)}`,
-                { method: "POST" }
+                `${baseUrl}/api/workshops/${selectedWorkshop.id}/apply`,
+                {
+                    method: "POST",
+                    body: form,
+                }
             );
 
             if (response.ok) {
-                setSubmissionMessage({ type: "success", text: "✅ Application submitted successfully!" });
+                setSubmissionMessage({ type: "success", text: "Application submitted!" });
                 setShowApplyForm(false);
-                setFormData({ userName: "", email: "", phone: "", screenshot: null });
             } else {
                 const text = await response.text();
-                setSubmissionMessage({ type: "error", text: "❌ " + text });
+                setSubmissionMessage({ type: "error", text });
             }
         } catch (err) {
-            setSubmissionMessage({ type: "error", text: "⚠️ Something went wrong." });
+            setSubmissionMessage({ type: "error", text: "Error submitting" });
         } finally {
             setTimeout(() => {
                 setIsSubmitting(false);
@@ -107,6 +113,7 @@ const CategoryView = () => {
             }, 2500);
         }
     };
+
 
     return (
         <div className="category-page">
