@@ -10,7 +10,10 @@ export default function OAuthSuccess() {
             JSON.stringify({ role: "ADMIN" })
         );
 
-        navigate("/admin");
+        setTimeout(() => {
+            navigate("/admin/dashboard");
+        }, 300);
+
     }, []);
 
     return <h2>Signing you in...</h2>;
