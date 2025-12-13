@@ -10,20 +10,20 @@ const members = [
     },
     {
         id: 2,
+        name: "Mr. Ranjeet Shanbag",
+        role: "Deputy Director",
+        image: "/images/TeamImages/Mr.-Ranjeet-Shanbag.webp",
+    },
+    {
+        id: 3,
         name: "Mr. Kishor Gaikwad",
         role: "Program Manager",
         image: "/images/TeamImages/KishorSirPhoto.jpg",
     },
     {
-        id: 3,
-        name: "Ms. Bhakti Talwelkar",
-        role: "Content Developer",
-        image: "/images/TeamImages/BhaktiMamPhoto.jpg",
-    },
-    {
         id: 4,
         name: "Mr. Sakib Ahamad",
-        role: "Field Officer, STEAM Program",
+        role: "DIY-LAB Incharge",
         image: "/images/TeamImages/SakibPhoto.jpg",
     },
 ];
