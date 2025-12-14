@@ -9,6 +9,8 @@ export default function BlogPage() {
     const [blogs, setBlogs] = useState([]);
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("All");
+    const [publishError, setPublishError] = useState("");
+
 
     const [newBlog, setNewBlog] = useState({
         author: "",
@@ -22,6 +24,7 @@ export default function BlogPage() {
         fetchRecentBlogs();
     }, []);
 
+
     const fetchRecentBlogs = async () => {
         const res = await axios.get(`${BASE_URL}/recent`);
         setBlogs(res.data);
@@ -29,6 +32,12 @@ export default function BlogPage() {
     const { user } = useAuth();
 
     const handlePublish = async () => {
+
+        if (!user?.email) {
+            setPublishError("To publish a blog, you need to log in.");
+            return;
+        }
+
         if (
             !newBlog.author ||
             !newBlog.category ||
@@ -36,13 +45,15 @@ export default function BlogPage() {
             !newBlog.year ||
             !newBlog.link
         ) {
-            alert("Please fill all fields");
+            setPublishError("Please fill all fields.");
             return;
         }
 
+        setPublishError("");
+
         await axios.post(BASE_URL, {
             ...newBlog,
-            ownerEmail: user.email
+            ownerEmail: user.email,
         });
 
         setNewBlog({
@@ -56,7 +67,7 @@ export default function BlogPage() {
         fetchRecentBlogs();
     };
 
-        const handleSearch = async (value) => {
+    const handleSearch = async (value) => {
         setSearch(value);
 
         if (!value.trim()) {
@@ -189,6 +200,12 @@ export default function BlogPage() {
                 <button onClick={handlePublish} className="publish-btn">
                     Publish Blog
                 </button>
+                {publishError && (
+                    <p className="publish-error">
+                        {publishError}
+                    </p>
+                )}
+
             </div>
         </div>
     );

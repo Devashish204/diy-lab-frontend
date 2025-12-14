@@ -45,7 +45,8 @@ import AdminProtectedRoute from "../pages/admin/AdminProtectedRoute/AdminProtect
 import OAuthSuccess from "../pages/admin/OAuthSuccess.jsx";
 import TeacherTrainingForm from "../pages/user/TeacherTraningPage/TeacherTrainingForm.jsx";
 import AdminTeacherTraining from "../pages/admin/admin-teacher-training/AdminTeacherTraining.jsx";
-import BlogPage from "../pages/user/BlogPage/BlogPage.jsx"; // 🆕 import our new guard
+import BlogPage from "../pages/user/BlogPage/BlogPage.jsx";
+import AdminBlogManagement from "../pages/admin/admin-blogs/AdminBlogManagment.jsx"; // 🆕 import our new guard
 
 const AppRoutes = () => {
     return (
@@ -173,6 +174,16 @@ const AppRoutes = () => {
                     </AdminProtectedRoute>
                 }
             />
+
+            <Route
+                path="/admin/blogs"
+                element={
+                    <AdminProtectedRoute>
+                        <AdminBlogManagement/>
+                    </AdminProtectedRoute>
+                }
+            />
+
 
             {/* User routes */}
             <Route path="/users/workshops" element={<UserWorkshops/>}/>

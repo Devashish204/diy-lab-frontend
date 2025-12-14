@@ -65,6 +65,7 @@ export default function AdminDashboard() {
                         <li><Link to="/admin/teacher-training">Teacher Training</Link></li>
                         <li><Link to="/admin/school-visits">School Visits</Link></li>
                         <li><Link to="/admin/memberships">DIY-LAB Membership</Link></li>
+                        <li><Link to="/admin/blogs">Blogs</Link></li>
                         <li><Link to="/admin/appointments">Appointments</Link></li>
                         <li><Link to="/admin/internships">Internships</Link></li>
                         <li><Link to="/admin/careers">Careers</Link></li>

@@ -98,3 +98,8 @@ h2 {
 .publish-btn:hover {
     background: #4338ca;
 }
+.publish-error {
+    color: #d32f2f;
+    margin-top: 10px;
+    font-size: 14px;
+}
