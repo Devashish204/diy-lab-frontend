@@ -44,7 +44,8 @@ import Unauthorized from "../pages/admin/admin-unauthorized/unauthorized.jsx"; /
 import AdminProtectedRoute from "../pages/admin/AdminProtectedRoute/AdminProtectedRoute.jsx";
 import OAuthSuccess from "../pages/admin/OAuthSuccess.jsx";
 import TeacherTrainingForm from "../pages/user/TeacherTraningPage/TeacherTrainingForm.jsx";
-import AdminTeacherTraining from "../pages/admin/admin-teacher-training/AdminTeacherTraining.jsx"; // 🆕 import our new guard
+import AdminTeacherTraining from "../pages/admin/admin-teacher-training/AdminTeacherTraining.jsx";
+import BlogPage from "../pages/user/BlogPage/BlogPage.jsx"; // 🆕 import our new guard
 
 const AppRoutes = () => {
     return (
@@ -200,6 +201,7 @@ const AppRoutes = () => {
             <Route path="/user/safety" element={<SafetyPage/>}/>
             <Route path="/user/visits" element={<VisitPage/>}/>
             <Route path="/user/teacher-training" element={<TeacherTrainingForm/>}/>
+            <Route path="/user/blogs" element={<BlogPage/>}/>
 
             {/* Common routes */}
             <Route path="/" element={<Home/>}/>

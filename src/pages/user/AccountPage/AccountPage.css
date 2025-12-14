@@ -458,3 +458,14 @@ input:focus {
     background: #aac4ff;
     cursor: not-allowed;
 }
+.blogs-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.blogs-table th,
+.blogs-table td {
+    width: 25%;
+    text-align: center;
+    word-break: break-word;
+}

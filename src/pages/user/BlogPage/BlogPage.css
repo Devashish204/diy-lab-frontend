@@ -1,0 +1,100 @@
+.blog-page {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    margin-top: 5rem;
+}
+
+.blog-list {
+    flex: 2;
+}
+
+.create-blog {
+    flex: 1;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-filter button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: gray;
+}
+
+.category-filter .active {
+    background: #4f46e5;
+    color: white;
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.blog-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.blog-card h3 {
+    margin-bottom: 8px;
+}
+
+.blog-card a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-blog input,
+.create-blog select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.publish-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.publish-btn:hover {
+    background: #4338ca;
+}

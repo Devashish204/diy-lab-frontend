@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useAuth } from "../../../components/AuthContext.jsx";
 import "./AccountPage.css";
 
@@ -18,6 +17,8 @@ export default function AccountPage() {
     const [selectedMembership, setSelectedMembership] = useState(null);
     const [paymentProof, setPaymentProof] = useState(null);
     const fileInputRef = React.useRef(null);
+    const [myBlogs, setMyBlogs] = useState([]);
+    const [editingBlog, setEditingBlog] = useState(null);
 
     const API = import.meta.env.VITE_API_BASE_URL_PROD || "";
 
@@ -26,6 +27,7 @@ export default function AccountPage() {
             fetchUserWorkshops();
             fetchUserServices();
             fetchUserMemberships();
+            fetchMyBlogs();
         }
     }, [user]);
 
@@ -135,6 +137,60 @@ export default function AccountPage() {
         }
     };
 
+    const fetchMyBlogs = async () => {
+        const res = await fetch(
+            `${API}/api/blogs/my?email=${encodeURIComponent(user.email)}`,
+            {
+                method: "GET",
+            }
+        );
+
+        if (!res.ok) throw new Error();
+        setMyBlogs(await res.json());
+    };
+
+
+
+    const handleDeleteBlog = async (blogId) => {
+        if (!window.confirm("Are you sure you want to delete this blog?")) return;
+
+        try {
+            const res = await fetch(
+                `${API}/api/blogs/${blogId}?email=${encodeURIComponent(user.email)}`,
+                {
+                    method: "DELETE",
+                }
+            );
+
+            if (!res.ok) throw new Error();
+            fetchMyBlogs();
+        } catch {
+            alert("Failed to delete blog");
+        }
+    };
+
+    const handleUpdateBlog = async () => {
+        try {
+            const res = await fetch(`${API}/api/blogs/${editingBlog.id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+                body: JSON.stringify({
+                    title: editingBlog.title,
+                    category: editingBlog.category,
+                    year: editingBlog.year,
+                    link: editingBlog.link,
+                }),
+            });
+            if (!res.ok) throw new Error();
+            setEditingBlog(null);
+            fetchMyBlogs();
+        } catch {
+            alert("Failed to update blog");
+        }
+    };
+
+
     return (
         <div className="account-container">
             <div className="account-card wide">
@@ -180,7 +236,7 @@ export default function AccountPage() {
                     {activeTab === "activities" && (
                         <div className="activities-section">
                             <div className="sub-tab-buttons">
-                                {["workshops", "services", "membership"].map((s) => (
+                                {["workshops", "services", "membership", "blogs"].map((s) => (
                                     <button
                                         key={s}
                                         className={subTab === s ? "active" : ""}
@@ -289,6 +345,103 @@ export default function AccountPage() {
                                     </div>
                                 ) : <p className="no-workshops">No membership applications yet.</p>
                             )}
+
+                            {subTab === "blogs" && (
+                                myBlogs.length > 0 ? (
+                                    <div className="table-container">
+                                        <table className="workshop-table blogs-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Title</th>
+                                                <th>Category</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            {myBlogs.map((blog) => (
+                                                <tr key={blog.id}>
+                                                    <td>{blog.year}</td>
+                                                    <td>{blog.title}</td>
+                                                    <td>{blog.category}</td>
+                                                    <td>
+                                                        <button
+                                                            onClick={() => setEditingBlog(blog)}
+                                                            style={{ marginRight: "8px" }}
+                                                        >
+                                                            Edit
+                                                        </button>
+                                                        <button
+                                                            onClick={() => handleDeleteBlog(blog.id)}
+                                                            style={{ color: "white" }}
+                                                        >
+                                                            Delete
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                            </tbody>
+
+
+                                        </table>
+                                    </div>
+                                ) : (
+                                    <p className="no-workshops">You haven’t published any blogs yet.</p>
+                                )
+                            )}
+
+                            {editingBlog && (
+                                <div className="image-modal" onClick={() => setEditingBlog(null)}>
+                                    <div className="payment-modal" onClick={(e) => e.stopPropagation()}>
+                                        <button className="membershipModal_closeBtn_unique"
+                                                onClick={() => setEditingBlog(null)}>✖</button>
+
+                                        <h2>Edit Blog</h2>
+
+                                        <input
+                                            type="text"
+                                            value={editingBlog.title}
+                                            onChange={(e) =>
+                                                setEditingBlog({ ...editingBlog, title: e.target.value })
+                                            }
+                                        />
+
+                                        <input
+                                            type="text"
+                                            value={editingBlog.category}
+                                            onChange={(e) =>
+                                                setEditingBlog({ ...editingBlog, category: e.target.value })
+                                            }
+                                        />
+
+                                        <input
+                                            type="text"
+                                            value={editingBlog.year}
+                                            onChange={(e) =>
+                                                setEditingBlog({ ...editingBlog, year: e.target.value })
+                                            }
+                                        />
+
+                                        <input
+                                            type="url"
+                                            value={editingBlog.link}
+                                            onChange={(e) =>
+                                                setEditingBlog({ ...editingBlog, link: e.target.value })
+                                            }
+                                        />
+
+                                        <button
+                                            className="membershipModal_uploadBtn_unique"
+                                            onClick={handleUpdateBlog}
+                                        >
+                                            Update Blog
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+
+
                         </div>
                     )}
                 </div>
