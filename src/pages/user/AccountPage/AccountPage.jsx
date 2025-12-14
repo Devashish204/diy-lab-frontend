@@ -171,17 +171,20 @@ export default function AccountPage() {
 
     const handleUpdateBlog = async () => {
         try {
-            const res = await fetch(`${API}/api/blogs/${editingBlog.id}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                credentials: "include",
-                body: JSON.stringify({
-                    title: editingBlog.title,
-                    category: editingBlog.category,
-                    year: editingBlog.year,
-                    link: editingBlog.link,
-                }),
-            });
+            const res = await fetch(
+                `${API}/api/blogs/${editingBlog.id}?email=${encodeURIComponent(user.email)}`,
+                {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        title: editingBlog.title,
+                        category: editingBlog.category,
+                        year: editingBlog.year,
+                        link: editingBlog.link,
+                    }),
+                }
+            );
+
             if (!res.ok) throw new Error();
             setEditingBlog(null);
             fetchMyBlogs();
