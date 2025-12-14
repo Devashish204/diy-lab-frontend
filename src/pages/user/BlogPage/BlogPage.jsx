@@ -87,7 +87,7 @@ export default function BlogPage() {
     return (
         <div className="blog-page">
             <div className="blog-list">
-                <h2>Student Blogs</h2>
+                <h1>Blogs</h1>
 
                 <input
                     type="text"
