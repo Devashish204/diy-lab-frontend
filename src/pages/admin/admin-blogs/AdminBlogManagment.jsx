@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminBlogManagment.css";
+import { useNavigate } from "react-router-dom";
+
 
 const API = `${import.meta.env.VITE_API_BASE_URL_PROD}/api/blogs/admin`;
 
 export default function AdminBlogManagement() {
+    const navigate = useNavigate();
     const [blogs, setBlogs] = useState([]);
     const [search, setSearch] = useState("");
     const [editingBlog, setEditingBlog] = useState(null);
@@ -62,6 +65,14 @@ export default function AdminBlogManagement() {
 
     return (
         <div className="admin-blogs">
+
+            <button
+                className="back-btn"
+                onClick={() => navigate("/admin/dashboard")}
+            >
+                ← Back to Dashboard
+            </button>
+
             <h1>Manage Blogs</h1>
 
             <input

@@ -159,3 +159,19 @@
 .modal button:last-of-type:hover {
     background: #6b7280;
 }
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
