@@ -106,8 +106,9 @@ button {
 }
 
 button.approved {
-    background: gray;
+    background: white;
     cursor: not-allowed;
+    color: #00a8ff;
 }
 
 @media (max-width: 768px) {
