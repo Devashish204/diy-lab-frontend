@@ -88,7 +88,7 @@ function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <h2>© 2025 DIY LAB, Vigyan Ashram. All rights reserved</h2>
+                <h2>© 2026 DIY LAB, Vigyan Ashram. All rights reserved</h2>
             </div>
         </footer>
     );
