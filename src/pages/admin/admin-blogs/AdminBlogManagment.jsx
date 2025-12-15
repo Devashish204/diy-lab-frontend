@@ -37,16 +37,17 @@ export default function AdminBlogManagement() {
         if (!window.confirm("Delete this blog?")) return;
 
         await axios.delete(
-            `${import.meta.env.VITE_API_BASE_URL_PROD}/api/blogs/${id}`,
+            `${import.meta.env.VITE_API_BASE_URL_PROD}/api/blogs/admin/${id}`,
             { withCredentials: true }
         );
 
         fetchBlogs();
     };
 
+
     const handleUpdate = async () => {
         await axios.put(
-            `${import.meta.env.VITE_API_BASE_URL_PROD}/api/blogs/${editingBlog.id}`,
+            `${import.meta.env.VITE_API_BASE_URL_PROD}/api/blogs/admin/${editingBlog.id}`,
             {
                 title: editingBlog.title,
                 category: editingBlog.category,
@@ -55,7 +56,6 @@ export default function AdminBlogManagement() {
             },
             { withCredentials: true }
         );
-
         setEditingBlog(null);
         fetchBlogs();
     };
