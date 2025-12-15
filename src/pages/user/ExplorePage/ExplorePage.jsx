@@ -10,8 +10,8 @@ function ExplorePage() {
     const [stage, setStage] = useState("loading"); // "loading" -> "success" -> "content"
 
     useEffect(() => {
-        const loaderTimer = setTimeout(() => setStage("success"), 2000);
-        const successTimer = setTimeout(() => setStage("content"), 4500); // Wait 2.5s to fade out
+        const loaderTimer = setTimeout(() => setStage("success"), 1000);
+        const successTimer = setTimeout(() => setStage("content"), 1500);
         return () => {
             clearTimeout(loaderTimer);
             clearTimeout(successTimer);
@@ -62,6 +62,19 @@ function ExplorePage() {
 
                         <section className="section yellow">
                             <div className="section-header">
+                                <img src="/images/ExplorePage-images/online-course.png" alt="Courses Icon" />
+                                <h2>Courses</h2>
+                            </div>
+                            <p>
+                                Discover exciting courses at DIY Lab – where learning meets making!
+                            </p>
+                            <button className="explore-btn" onClick={() => navigate("/courses")}>
+                                Explore
+                            </button>
+                        </section>
+
+                        <section className="section white">
+                            <div className="section-header">
                                 <img src="/images/ExplorePage-images/internship.png" alt="Internships Icon" />
                                 <h2>Internships</h2>
                             </div>
@@ -72,7 +85,7 @@ function ExplorePage() {
                             </button>
                         </section>
 
-                        <section className="section white">
+                        <section className="section yellow">
                             <div className="section-header">
                                 <h2>Careers</h2>
                                 <img src="/images/ExplorePage-images/career-path.png" alt="Careers Icon" />
@@ -86,19 +99,6 @@ function ExplorePage() {
                             </p>
                             <button className="explore-btn" onClick={() => navigate("/careers")}>
                                 Apply Now
-                            </button>
-                        </section>
-
-                        <section className="section yellow">
-                            <div className="section-header">
-                                <img src="/images/ExplorePage-images/online-course.png" alt="Courses Icon" />
-                                <h2>Courses</h2>
-                            </div>
-                            <p>
-                                Discover exciting courses at DIY Lab – where learning meets making!
-                            </p>
-                            <button className="explore-btn" onClick={() => navigate("/courses")}>
-                                Explore
                             </button>
                         </section>
                     </div>

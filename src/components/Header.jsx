@@ -30,7 +30,7 @@ function Header() {
             <nav className={`nav-links ${menuOpen ? 'show' : ''}`}>
                 <Link to="/users/home" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
                 <Link to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link>
-                <Link to="/users/booking" className="nav-link" onClick={() => setMenuOpen(false)}>Book Slot</Link>
+                <Link to="/users/booking" className="nav-link" onClick={() => setMenuOpen(false)}>Engage</Link>
                 <Link to="/user/blogs" className="nav-link" onClick={() => setMenuOpen(false)}>Blog</Link>
                 <Link to="/users/explore" className="nav-link" onClick={() => setMenuOpen(false)}>Explore</Link>
                 <Link to="/user/visits" className="nav-link" onClick={() => setMenuOpen(false)}>Visit</Link>

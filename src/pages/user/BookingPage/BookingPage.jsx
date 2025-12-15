@@ -13,7 +13,6 @@ function BookingPage() {
         <Header />
         <div className="booking-page">
 
-          {/* 🔹 MEMBERSHIP — MOVED TO TOP */}
           <section className="section yellow">
             <div className="section-header">
               <img src="/images/BookingPage-Images/membership.png" alt="Membership Icon" />
@@ -25,7 +24,6 @@ function BookingPage() {
             </button>
           </section>
 
-          {/* Workshops */}
           <section className="section white">
             <div className="section-header">
               <img src="/images/BookingPage-Images/workshops_icon.png" alt="Workshop Icon" />
@@ -37,7 +35,6 @@ function BookingPage() {
             </button>
           </section>
 
-          {/* Services */}
           <section className="section yellow">
             <div className="section-header">
               <img src="/images/BookingPage-Images/digital-services.png" alt="Digital Services" />
@@ -49,7 +46,6 @@ function BookingPage() {
             </button>
           </section>
 
-          {/* Teacher Training */}
           <section className="section white">
             <div className="section-header">
               <img src="/images/BookingPage-Images/teacher-training.png" alt="Teacher Training Icon" />
@@ -64,7 +60,6 @@ function BookingPage() {
             </button>
           </section>
 
-          {/* School Visits */}
           <section className="section yellow">
             <div className="section-header">
               <img src="/images/BookingPage-Images/school-visits.png" alt="School Visits Icon" />
@@ -79,7 +74,6 @@ function BookingPage() {
             </button>
           </section>
 
-          {/* Info Section */}
           <section className="info-section">
             <h3>Things You Must Know</h3>
             <div className="info-grid">
