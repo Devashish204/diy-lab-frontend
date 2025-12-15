@@ -175,3 +175,64 @@
 .back-btn:hover {
     text-decoration: underline;
 }
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* Update button */
+.blog-update-btn {
+    flex: 1;
+    background: #16a34a;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background: #15803d;
+}
+
+/* Delete button */
+.blog-delete-btn {
+    flex: 1;
+    background: #dc2626;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-delete-btn:hover {
+    background: #b91c1c;
+}
+
+
+.blog-cancel-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: #9ca3af;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-cancel-btn:hover {
+    background: #6b7280;
+}
+.modal-box {
+    background: #ffffff;
+    padding: 24px;
+    width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}

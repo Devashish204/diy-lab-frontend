@@ -110,30 +110,51 @@ export default function AdminBlogManagement() {
 
             {editingBlog && (
                 <div className="modal">
-                    <h3>Edit Blog</h3>
+                    <div className="modal-box">
 
-                    <input
-                        value={editingBlog.title}
-                        onChange={e => setEditingBlog({ ...editingBlog, title: e.target.value })}
-                    />
+                        <h3>Edit Blog</h3>
 
-                    <input
-                        value={editingBlog.category}
-                        onChange={e => setEditingBlog({ ...editingBlog, category: e.target.value })}
-                    />
+                        <input
+                            value={editingBlog.title}
+                            onChange={e => setEditingBlog({ ...editingBlog, title: e.target.value })}
+                        />
 
-                    <input
-                        value={editingBlog.year}
-                        onChange={e => setEditingBlog({ ...editingBlog, year: e.target.value })}
-                    />
+                        <input
+                            value={editingBlog.category}
+                            onChange={e => setEditingBlog({ ...editingBlog, category: e.target.value })}
+                        />
 
-                    <input
-                        value={editingBlog.link}
-                        onChange={e => setEditingBlog({ ...editingBlog, link: e.target.value })}
-                    />
+                        <input
+                            value={editingBlog.year}
+                            onChange={e => setEditingBlog({ ...editingBlog, year: e.target.value })}
+                        />
 
-                    <button onClick={handleUpdate}>Update</button>
-                    <button onClick={() => setEditingBlog(null)}>Cancel</button>
+                        <input
+                            value={editingBlog.link}
+                            onChange={e => setEditingBlog({ ...editingBlog, link: e.target.value })}
+                        />
+
+                        <div className="modal-actions">
+                            <button className="blog-update-btn" onClick={handleUpdate}>
+                                Update
+                            </button>
+
+                            <button
+                                className="blog-delete-btn"
+                                onClick={() => handleDelete(editingBlog.id)}
+                            >
+                                Delete
+                            </button>
+                        </div>
+
+                        <button
+                            className="blog-cancel-btn"
+                            onClick={() => setEditingBlog(null)}
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
                 </div>
             )}
         </div>
